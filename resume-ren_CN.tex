@@ -44,7 +44,7 @@ DataLoaderManager \& DataLoader
   \item 项目简介：DataLoaderManager \& DataLoader 提供统一接口，将来自不同数据源，不同格式的数据导入到ClickHouse平台，同时提供publish api。DataLoaderManager受SparkManager启发分为任务管理和资源管理；任务管理包括任务拆分、任务重试、任务失败处理、任务调度等功能。资源管理包括资源创建、worker选择、worker心跳监测等。DataLoader负责具体数据导入工作，具体包括：数据Schema维护、ORC文件读取解析、根据不同数据源使用不同方式并发导入、数据校验、失败重试
   \item 主要工作：负责DataLoaderManager所有工作，包括CI/CD、监控、设计、实现、维护;负责DataLoader功能实现、性能调优, 监控系统开发等
   \item 工具和关键技术: Airflow、Golang、ClickHouse、ORC、S3、HDFS、PQM
-  \item 成果：
+  \item 成果：负责完成多种数据源接入，提供统一数据导入接口
 \end{itemize}
 ClickHouse
 \begin{itemize}
