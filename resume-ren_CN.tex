@@ -1,0 +1,114 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{张忍}
+
+\basicInfo{
+  \email{xueluowuhen.2007@163.com} \textperiodcentered\ 
+  \phone{(+86) 185-0097-2851} \textperiodcentered\ 
+  \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}
+ 
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{北京航空航天大学}, 北京}{2011.9 -- 2015.3}
+\textit{工学硕士}\ 计算机科学与技术
+\datedsubsection{\textbf{东北师范大学}, 吉林}{2006.09 -- 2010.07}
+\textit{工学学士}\ 软件工程
+
+\section{\faCogs\ 专业技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 熟悉Golang、Java、C++，了解Python、Shell、Scala、Matlab、MFC、STL等语言
+  \item 熟悉基本数据结构和算法、设计模式、多线程编程、分布式系统理念、系统设计理念
+  \item 熟悉后端设计方法、Gin框架、Golang常用基础库，Golang测试框架，多次Golang后端系统实现经验
+  \item 熟悉elasticsearch、clickhouse，了解lucene、kafka、redis、spark、hadoop生态
+  \item 熟悉Docker、Kubenetes、Terraform、Salt，了解Prometheus,Jenkins
+\end{itemize}
+
+\section{\faUsers\ 实习/项目经历}
+\datedsubsection{\textbf{FreeWheel} 北京}{2017年11月 -- 2023年5月}
+\role{高级软件开发工程师}{经理: 高富帅}
+DataLoaderManager \& DataLoader
+\begin{itemize}
+  \item 项目简介：DataLoaderManager \& DataLoader 提供统一接口，将来自不同数据源，不同格式的数据导入到ClickHouse平台，同时提供publish api。DataLoaderManager受SparkManager启发分为任务管理和资源管理；任务管理包括任务拆分、任务重试、任务失败处理、任务调度等功能。资源管理包括资源创建、worker选择、worker心跳监测等。DataLoader负责具体数据导入工作，具体包括：数据Schema维护、ORC文件读取解析、根据不同数据源使用不同方式并发导入、数据校验、失败重试
+  \item 主要工作：负责DataLoaderManager所有工作，包括CI/CD、监控、设计、实现、维护;负责DataLoader功能实现、性能调优, 监控系统开发等
+  \item 工具和关键技术: Airflow、Golang、ClickHouse、ORC、S3、HDFS、PQM
+  \item 成果：
+\end{itemize}
+ClickHouse
+\begin{itemize}
+  \item 项目简介：数据分析平台，负责承载来自不同应用方数据,包括Batch数据和实时数据。Batch数据包括事实数据和维度数据;
+  \item 主要工作：ClickHouse功能点调研、分享；表结构设计、SQL性能优化、性能测试平台开发、监控系统扩展、日常维护
+  \item 工具和关键技术: ClickHouse、ClickHouse-exporter、Golang
+  \item 成果：为forecast、insight提供数据服务
+\end{itemize}
+Analytics \& DataFeed
+\begin{itemize}
+  \item 项目简介：为不同数据源提供统一视图的报表平台，客户可以创建、更新、导出、周期性调度数据报表；
+  \item 主要工作：负责CI/CD、重构和扩展Analytics功能：支持xlsx格式数据导出、扩展出SuperAnalytics、数据格式化等，负责监控平台建设与实现, 性能优化
+  \item 工具和关键技术: Golang, Looker, Presto, 
+  \item 成果：Analytics从只支持csv导出，到可多格式导出；产生新产品SupperAnalytics，新的CI/CD，新的监控系统，性能优化后整体提前2小时、Presto集群使用率下降20\%、每天节省\$200
+\end{itemize}
+
+\datedsubsection{\textbf{北京奇虎测腾科技有限公司} 北京}{2015年4月 -- 2017年11月}
+\role{大数据平台开发工程师}{XX}
+\begin{onehalfspacing}
+数据清洗平台
+\begin{itemize}
+  \item 项目简介:数据清洗平台包括数据清洗和数据融合两大部分功能。数据清洗:将关系数据库中数 据导入到数据清洗平台之后，通过对数据特征分析之后，可使用规则库中规则对数据进行多次迭 代式清洗，最终清洗出用户满意的数据。数据融合:将具有相同关键词的数据融合在一起。使用 kafka做临时存储，elasticsearch做数据搜索和分析，hdfs做最终存储
+  \item 主要工作:整体项目协调，项目整体架构，源码模块结构，数据搜索和分析模块、任务调度模块
+  \item 工具和关键技术:elasticsearch、quartz、kafka、springboot、hdfs、spark
+  \item 成果:完成清洗数据平台，客户比较满意
+\end{itemize}
+\end{onehalfspacing}
+\begin{onehalfspacing}
+天合大数据分析平台
+\begin{itemize}
+  \item 项目简介:用户将不同类型的数据——结构化数据和非结构化数据导入到天合大数据分析平台， 平台通过处理分析，除了可向用户提供基本的搜索、关联图分析、地理信息数据分析等，还向用 户提供定制化的功能服务，例如建立在天合之上的子项目——“数据魔方”，提供了数据录入、自 定搜索、数据浏览、关联分析、地图分析、任务管理等功能。
+  \item 主要工作:设计不同类型数据的索引结构，提供索引和搜索接又，负责整个搜索模块的编码与优 化;非结构化数据(包括doc,pdf,email)的导入和分析;文件服务器;地理信息数据搜索与统计;整 个项目的maven化;监控系统的设计与实现;
+  \item elasticsearch、netty、tika、spark、redis、kafka
+  \item 成果:完成各种数据源的统一分析和可视化展示
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{北京百度网讯科技技术有限公司} 北京}{2014年1月 -- 2014年6月}
+\role{实习生}{个人项目}
+\begin{onehalfspacing}
+北京百度网讯科技技术有限公司知识搜索部（数据处理）
+\begin{itemize}
+  \item 概况:工作中接触的数据处理平台主要分为三类:其它部门已有大数据平台，百科部门构建的部 分大数据平台，关系数据库系统。利用现有数据平台完成向其它数据需求者提供有用数据的任 务，并接下来构建百度百科大数据系统
+  \item 主要工作:通过开发实习项目“相册管理系统”了解百度LAMP开发架构和开发环境;利用其它部 门大数据平台构建数据分析任务;测试本部门的大数据平台，并从中获取特征数据;利用脚本编 程的方式为PM提供结构化符合需求数据(性能);编写脚本周期性任务。
+  \item 工具和关键技术:PHP、MySQL、Hive、Hadoop、Shell
+  \item 成果:实习期间为PM分析用户行为提供数据支持，对初期构建的大数据系统进行测试
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faHeartO\ 获奖情况}
+\datedline{\textit{北航硕士研究生学校二等奖学金两次}}{2011 -- 2012}
+\datedline{东北师范大学一等奖学金两次，二等奖学金两次，优秀学生一次,曾获得国家励志奖学金、吉林省ACM IC/PC竞赛三等奖}{2006-2010}
+
+\section{\faInfo\ 研究成果}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 张忍，荆凯.技术发明专利，实现非结构化文档可搜索化的一种架构，专利号(LZ1605815CN01)
+  \item 荆凯，张忍.技术发明专利，不确定语言环境条件下数据规模可自动扩展地关系数据库数据可搜索化实现，专利号(LZ1605814CN01)
+  \item 张忍，李帅，王莉莉，郝爱民，潘俊君.国家发明专利，人体心脏的实时逼真绘制方法，专利号 (201410768217.7)
+  \item ZHANG Ren, YI Zhike, HAO Aimin, ZHEN Chenglizhao. A Real-Time Realistic Rendering Method for Active Human Heart. ICISCE 2015
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}
