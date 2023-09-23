@@ -1,0 +1,100 @@
+% !TEX program = xelatex
+
+\documentclass{resume}
+%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{Ren Zhang}
+
+\basicInfo{
+  \email{xueluowuhen.2007@163.com} \textperiodcentered\ 
+  \phone{(+86) 185-0097-2851} \textperiodcentered\ }
+
+\section{\faGraduationCap\ Education}
+\datedsubsection{\textbf{Beihang University (BUAA)}, Beijing}{September 2011 -- March 2015}
+\textit{Master of Engineering}\ Computer Science and Technology
+\datedsubsection{\textbf{Northeast Normal University}, Jilin}{September 2006 -- July 2010}
+\textit{Bachelor of Engineering}\ Software Engineering
+
+\section{\faUsers\ Professional Skill}
+\begin{itemize}
+  \item Proficient in Golang, Java, C++; familiar with Python, Shell, Scala, Matlab, MFC, STL, and other languages.
+  \item Proficient in basic data structures and algorithms, design patterns, multi-threaded programming, distributed system concepts, and system design principles. 
+  \item Familiar with backend design methodologies, Gin framework, common Golang libraries, Golang testing frameworks, and extensive experience in implementing backend systems using Golang. 
+  \item Familiar with Elasticsearch, ClickHouse; knowledgeable in Lucene, Kafka, Redis, Spark, and the Hadoop ecosystem.
+  \item Proficient in Docker, Kubernetes, Terraform, Salt; knowledgeable in Prometheus and Jenkins. 
+\end{itemize}
+
+\section{\faUsers\ Internship/Project Experience}
+\datedsubsection{\textbf{FreeWheel}, Beijing}{November 2017 -- May 2023}
+\role{Senior Software Development Engineer}{}
+DataLoaderManager Task Scheduling \& DataLoader Data Import Tool
+\begin{itemize}
+\item Project Introduction: DataLoaderManager \& DataLoader provide a unified interface to import data from different data sources and formats into the ClickHouse platform, while also providing a publish API. DataLoaderManager, inspired by SparkManager, is divided into task management and resource management. Task management includes task splitting, task retrying, task failure handling, task scheduling, etc. Resource management includes resource creation, worker selection, worker heartbeat monitoring, etc. DataLoader is responsible for the specific data import work, including data schema maintenance, ORC file reading and parsing, concurrent import based on different data sources, data validation, and failed retries.
+\item Main Responsibilities: Responsible for all tasks in DataLoaderManager, including CI/CD, monitoring, design, implementation, and maintenance; responsible for DataLoader feature implementation, performance tuning, and development of monitoring system.
+\item Tools and Key Technologies: Airflow, Golang, ClickHouse, ORC, S3, HDFS, PQM
+\item Achievements: Responsible for integrating various data sources and providing a unified data import interface.
+\end{itemize}
+ClickHouse Data Analysis Platform
+\begin{itemize}
+\item Project Introduction: Data analysis platform, responsible for hosting data from different application sources, including batch data and real-time data. Batch data includes fact data and dimension data.
+\item Main Responsibilities: ClickHouse feature research and sharing; table structure design, SQL performance optimization, development of performance testing platform, extension of monitoring system, daily maintenance.
+\item Tools and Key Technologies: ClickHouse, ClickHouse-exporter, Golang
+\item Achievements: Providing data services for multiple data consumers such as forecast, insight, etc.
+\end{itemize}
+Analytics \& DataFeed Data Analysis Products
+\begin{itemize}
+\item Project Introduction: Providing a unified view of the reporting platform for different data sources, where customers can create, update, export, and schedule data reports.
+\item Main Responsibilities: Responsible for CI/CD, refactoring and extending Analytics functionalities: support for exporting data in xlsx format, extension of SuperAnalytics, data formatting, etc. Also responsible for the construction and implementation of the monitoring platform, performance optimization.
+\item Tools and Key Technologies: Golang, Looker, Presto
+\item Achievements: Enhanced Analytics from supporting only csv export to supporting multiple formats; introduced a new product, SuperAnalytics; implemented a new CI/CD system and a new monitoring system, resulting in an overall time-saving of 2 hours, a 20% decrease in Presto cluster utilization, and a daily cost savings of $200.
+\end{itemize}
+
+\datedsubsection{\textbf{Beijing Qihoo Certeon Technology Co., Ltd.}, Beijing}{April 2015 -- November 2017}
+\role{Big Data Platform Development Engineer}{}
+Data Cleansing Platform
+\begin{itemize}
+\item Project Introduction: The Data Cleansing Platform consists of two main functionalities: data cleansing and data fusion. Data cleansing involves importing data from relational databases into the platform, performing iterative cleansing using rules from the rule library based on data feature analysis, and ultimately producing cleaned data that satisfies user requirements. Data fusion involves merging data with similar keywords together. Temporary storage is done using Kafka, data search and analysis using Elasticsearch, and final storage using HDFS.
+\item Main Responsibilities: Overall project coordination, project architecture, source code module structure, data search and analysis module, task scheduling module.
+\item Tools and Key Technologies: Elasticsearch, Quartz, Kafka, Spring Boot, HDFS, Spark
+\item Achievements: Successfully completed the data cleansing platform, resulting in high customer satisfaction.
+\end{itemize}
+Tianhe Big Data Analysis Platform
+\begin{itemize}
+\item Project Introduction: Users import different types of data - structured and unstructured - into the Tianhe Big Data Analysis Platform. The platform provides users with basic features such as search, associative graph analysis, and geographical information data analysis through processing and analysis. It also offers customized services, such as the creation of sub-projects on top of Tianhe - "Data Cube," which provides functions including data entry, custom search, data browsing, associative analysis, map analysis, and task management.
+\item Main Responsibilities: Designing index structures for different types of data, providing index and search access, leading the coding and optimization of the entire search module; importing and analyzing unstructured data (including doc, pdf, email); file server; geographical information data search and statistics; mavenization of the entire project; design and implementation of the monitoring system.
+\item Tools and Key Technologies: Elasticsearch, Netty, Tika, Spark, Redis, Kafka
+\item Achievements: Successfully achieved unified analysis and visual presentation of various data sources.
+\end{itemize}
+
+\datedsubsection{\textbf{Baidu Netcom Technology Co., Ltd.}, Beijing}{January 2014 -- June 2014}
+\role{Intern}{}
+Knowledge Search Department, Baidu Netcom Technology Co., Ltd., Beijing
+\begin{itemize}
+\item Overview: The data processing platforms I worked with can be categorized into three types: existing big data platforms in other departments, partially built big data platforms in the encyclopedia department, and relational database systems. I completed tasks of providing useful data to other data requesters using the existing data platforms, and subsequently participated in building the Baidu Encyclopedia big data system.
+\item Main Responsibilities: Developed the internship project "Album Management System" to understand Baidu's LAMP development architecture and environment; utilized big data platforms from other departments for data analysis tasks; tested the big data platform in our department and extracted feature data from it; provided structured data that met the requirements to PM through scripting (performance); wrote scripts for periodic tasks.
+\item Tools and Key Technologies: PHP, MySQL, Hive, Hadoop, Shell
+\item Achievements: Provided data support for PMs to analyze user behavior during the internship, and conducted testing on the initially constructed big data system.
+\end{itemize}
+
+\section{\faHeartO\ Honors and Awards}
+\datedline{\textit{Beihang University Master's Scholarships (Second Prize) twice}}{2011 -- 2012}
+\datedline{Northeast Normal University First Prize Scholarships twice, Second Prize Scholarships twice, Outstanding Student once. Also awarded the National Inspirational Scholarship and Third Prize in Jilin Province ACM IC/PC Competition.}{2006-2010}
+
+\section{\faInfo\ Research Achievements}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+\item Zhang Ren, Jing Kai. Technical Invention Patent, Architecture for Making Unstructured Documents Searchable, Patent Number (LZ1605815CN01).
+\item Jing Kai, Zhang Ren. Technical Invention Patent, Automatic Scalable Data Searchable Implementation for Relational Databases under Uncertain Language Environment Conditions, Patent Number (LZ1605814CN01).
+\item Zhang Ren, Li Shuai, Wang Lili, Hao Aimin, Pan Junjun. National Invention Patent, Real-Time Realistic Rendering Method for Human Heart, Patent Number (201410768217.7).
+\item Zhang Ren, Yi Zhike, Hao Aimin, Zhen Chenglizhao. A Real-Time Realistic Rendering Method for Active Human Heart. ICISCE 2015.
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}
