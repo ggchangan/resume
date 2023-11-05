@@ -37,27 +37,28 @@
 
 \section{\faUsers\ 实习/项目经历}
 \datedsubsection{\textbf{FreeWheel} 北京}{2017年11月 -- 2023年5月}
-\role{高级软件开发工程师}{}
-DataLoaderManager任务调度 \& DataLoader数据导入工具
+\role{资深软件开发工程师}{}
+ClickHouse数据分析平台 (2020年6月 -- 2023年5月)
 \begin{itemize}
-  \item 项目简介：DataLoaderManager \& DataLoader 提供统一接口，将来自不同数据源，不同格式的数据导入到ClickHouse平台，同时提供publish api为多个team和产品提供数据服务。DataLoaderManager受SparkManager启发分为任务管理和资源管理；任务管理包括任务拆分、任务重试、任务失败处理、任务调度等功能。资源管理包括资源创建、worker选择、worker心跳监测等。DataLoader负责具体数据导入工作，具体包括：数据Schema维护、ORC文件读取解析、根据不同数据源使用不同方式并发导入、数据校验、失败重试
-  \item 主要工作：负责数据导入平台所有工作，包括：统一数据接入规范、主导多个team不同数据源接入ClickHouse数据分析平台；DataLoaderManger项目整个周期所有工作，CI/CD、监控、设计、实现、维护;负责DataLoader功能实现、性能调优, 监控系统开发等
-  \item 工具和关键技术: Airflow、Golang、ClickHouse、ORC、S3、HDFS、PQM、Jenkins、Helm、EKS
-  \item 成果：抽象出golang后端架构，可以在两人天定制web后端服务;为Forecast、Identity、Insight等多个团队提供分布式数据导入和刷新服务；系统具有良好扩展性，新的数据源的加入，只需要商量好数据源接口，将样例数据接入服务的周期从至少5个工作日降低为2个工作日；DataLoaderManager进行任务划分、资源管理、并发控制，降低了百分之50的AWS EC2费用，并且提高了数据导入的稳定性,将失败任务的重试粒度从batch级别变为表级别；
+  \item 项目简介：ClickHouse数据分析平台，负责承载来自不同应用方的Batch数据和实时数据;为Forecast、Identity、Insight等多个团队提供实时数据查询服务。
+  \item 主要工作：Batch数据分布式导入工具的开发、数据接入时间排期、性能测试工具开发、SQL性能优化；ClickHouse功能点调研、分享；表结构设计、性能测试平台开发、监控系统扩展、日常维护等
+  新数据源接入：表结构设计、数据性能测试、schema升级、SQL性能优化(添加索引、视图)；ClickHouse功能点调研、分享；表结构设计、性能测试平台开发、监控系统扩展、日常维护
+  \item 工具和关键技术: ClickHouse、ClickHouse-exporter、Airflow、Golang、K8s、Docker、Helm、Jenkins、EKS、S3、ORC
+  \item 成果：抽象出golang后端架构，可以在两人天定制web后端服务;为Forecast、Identity、Insight等多个团队提供分布式数据导入和刷新服务；系统具有良好扩展性，新的数据源的加入，只需要商量好数据源接口，将样例数据接入服务的周期从至少5个工作日降低为2个工作日；DataLoaderManager进行任务划分、资源管理、并发控制，降低了百分之50的AWS EC2费用，并且提高了数据导入的稳定性,将失败任务的重试粒度从batch级别变为表级别。
+  推广ClickHouse集群一般原理和新功能分享,提高组内成员对ClickHouse功能的理解，同时优化ClickHouse平台提供数据的能力；推广ClickHouse Explain、ClickHouse Projection、二级索引等多个feature在多个team中的使用；提供ClickHouse SQL性能监控和SQL优化方法分享，将多个数据产品中高频次、运行慢的SQL从分钟级别优化到秒级（5m-10s），优化数据产品的响应能力，降低ClickHouse的负载；
+  能测试平台，用于自动化ClickHouse版本升级或者新数据接入时，SQL性能测试，将此例行工作从5人天降低到2人天，并提供可视化性能对比和分析。
+  负责DataLoaderManager的CI/CD、数据校验系统以及监控系统（修改了ClickHouse-explore源码、提供SQL性能监控指标以及slow sql看板等）的优化和开发。
 \end{itemize}
-ClickHouse数据分析平台
+Analytics 数据产品 (2017年11月 -- 2020年5月)
 \begin{itemize}
-  \item 项目简介：数据分析平台，负责承载来自不同应用方数据,包括Batch数据和实时数据。Batch数据包括事实数据和维度数据;
-  \item 主要工作：新数据源接入：表结构设计、数据性能测试、schema升级、SQL性能优化(添加索引、视图)；ClickHouse功能点调研、分享；表结构设计、性能测试平台开发、监控系统扩展、日常维护
-  \item 工具和关键技术: ClickHouse、ClickHouse-exporter、Golang、K8s、Docker、Helm
-  \item 成果：为Forecast、Identity、Insight等多个团队提供实时数据查询服务;提供统一性能测试平台，用于自动化ClickHouse版本升级或者新数据接入时，SQL性能测试，将此例行工作从5人天降低到2人天，并提供可视化性能对比和分析；提供ClickHouse SQL性能监控和SQL优化方法分享，将多个数据产品中高频次、运行慢的SQL从分钟级别优化到秒级（5m-10s），优化数据产品的响应能力，降低ClickHouse的负载；ClickHouse新功能分享,提高组内成员对ClickHouse功能的理解，同时优化ClickHouse平台提供数据的能力；
-\end{itemize}
-Analytics \& DataFeed 数据分析产品
-\begin{itemize}
-  \item 项目简介：为不同数据源提供统一视图的报表平台，客户可以创建、更新、导出、周期性调度数据报表；
-  \item 主要工作：负责CI/CD、重构和扩展Analytics功能：支持xlsx格式数据导出、扩展出SuperAnalytics、数据格式化等，负责监控平台建设与实现, 性能优化
+  \item 项目简介：Analytics数据产品为客户提供数据报表服务，包括支持周期性报表导出的的Analytics和DataFeed产品；客户可以实时查看的Analytics、SupperAnalytics、DataFeed产品；CampainInsight和marketInsight等数据分析产品；以及相关监控、数据校验等；
+  \item 主要工作：Analytics、DataFeed、SuperAnalytics等项目多个模块的需求评审、接口定义；Analytics、CampaignInsight、MarketInsight多个核心模块重构；Doraemon、DataFeed、SuperAnalytics的从0到1构建和代码review;推广基于gin的web后端框架；
+  推广基于Salt/Terraform的CI/CD部署在DataApp团队的使用，又参与Doraemon、Analytics等多个项目基于EKS的部署；推广Airflow在DataApp团队的使用；优化Analytics基于Domain表的Looker数据建模以及相应的SQL性能。
   \item 工具和关键技术: Golang, Looker, Presto, Terraform, Salt, K8s, AWS, Gin, MySQL, Python, Airflow, Reactor, PQM
-  \item 成果：Analytics多格式导出（csv-->xlsx),数据格式化(日期、数字根据不同时区格式化),为公司争取了新的欧洲大客户;删除时区限制产生新产品(SupperAnalytics),将Analytics能力从单个网络扩展到全网，特别提高了SRE和Service的数据分析能力；新的CI/CD(Terraform/Salt->K8s)，将Analytics的升级过程从30m降低到5s以内；新的监控系统(Doraemon)，将若干ESC处理能力从Engineer转到Service，此类ESC的相应时间从>1day到即时；SQL性能优化(整体提前2小时、Presto集群使用率下降20\%、每天节省\$200);抽象出golang后端结构，可以在两人天定制web后端服务;
+  \item 成果：产出DataFeed、CampaignInsight、SuperAnalytics、Doraemon等产品；其中DataFeed弥补了Analytics小时级别粒度数据的不足；删除时区限制产生新产品(SupperAnalytics),将Analytics能力从单个网络扩展到全网，特别提高了SRE和Service的数据分析能力；
+  CampaignInsight作为过度产品成功帮公司稳固了迪士尼的客户；
+  Analytics核心功能开发多格式导出（csv-->xlsx）,数据格式化(日期、数字根据不同时区格式化),为公司争取了新的欧洲大客户;新的监控系统(Doraemon)，将若干ESC处理能力从Engineer转到Service，此类ESC的相应时间从>1day到即时；
+  Gin框架的推广以及规范的制定和推广，提高了golang后端的开发速度、优化了任务排查速度；新的CI/CD(Terraform/Salt->K8s)，将Analytics的升级过程从30m降低到5s以内；SQL性能优化(整体提前2小时、Presto集群使用率下降20\%、每天节省\$200);抽象出golang后端结构，可以在两人天定制web后端服务;
 \end{itemize}
 
 \datedsubsection{\textbf{北京奇虎测腾科技有限公司} 北京}{2015年4月 -- 2017年11月}
