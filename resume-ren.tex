@@ -31,27 +31,72 @@
 \section{\faUsers\ Internship/Project Experience}
 \datedsubsection{\textbf{FreeWheel}, Beijing}{November 2017 -- May 2023}
 \role{Senior Software Development Engineer}{}
-DataLoaderManager Task Scheduling \& DataLoader Data Import Tool
-\begin{itemize}
-\item Project Introduction: DataLoaderManager \& DataLoader provide a unified interface to import data from different data sources and formats into the ClickHouse platform, while also providing a publish API. DataLoaderManager, inspired by SparkManager, is divided into task management and resource management. Task management includes task splitting, task retrying, task failure handling, task scheduling, etc. Resource management includes resource creation, worker selection, worker heartbeat monitoring, etc. DataLoader is responsible for the specific data import work, including data schema maintenance, ORC file reading and parsing, concurrent import based on different data sources, data validation, and failed retries.
-\item Main Responsibilities: Responsible for all tasks in DataLoaderManager, including CI/CD, monitoring, design, implementation, and maintenance; responsible for DataLoader feature implementation, performance tuning, and development of monitoring system.
-\item Tools and Key Technologies: Airflow, Golang, ClickHouse, ORC, S3, HDFS, PQM
-\item Achievements: Abstracted the Golang backend architecture, allowing for customized web backend services to be developed in as little as two person-days. Provided distributed data import and refresh services for teams such as Forecast, Identity, and Insight. The system exhibits excellent scalability, with the integration of new data sources requiring only the discussion of data source interfaces and this reduced the cycle of integrating sample data into the service from at least 5 working days to 2 working days. DataLoaderManager handles task partitioning, resource management, and concurrency control, resulting in a 50\% reduction in AWS EC2 costs and an increase in data import stability and the granularity of retrying failed tasks was changed from batch-level to table-level.
-\end{itemize}
-ClickHouse Data Analysis Platform
-\begin{itemize}
-\item Project Introduction: Data analysis platform, responsible for hosting data from different application sources, including batch data and real-time data. Batch data includes fact data and dimension data.
-\item Main Responsibilities: ClickHouse feature research and sharing; table structure design, SQL performance optimization, development of performance testing platform, extension of monitoring system, daily maintenance.
-\item Tools and Key Technologies: ClickHouse, ClickHouse-exporter, Golang
-\item Achievements: Provided real-time data query services for teams including Forecast, Identity, Insight and so on. Established a unified performance testing platform for automated SQL performance testing during ClickHouse version upgrades or new data integration, reducing routine work from 5 person-days to 2 person-days. Additionally, offered visual performance comparison and analysis. Provided ClickHouse SQL performance monitoring and shared SQL optimization methods, improving the response time of high-frequency, slow-running SQL queries from minutes to seconds (from 5 minutes to 10 seconds). This optimization enhanced the data product's responsiveness and reduced ClickHouse's load. Also, shared new ClickHouse features to enhance team members' understanding of ClickHouse functionality while optimizing the platform's data provisioning capabilities.
-\end{itemize}
-Analytics \& DataFeed Data Analysis Products
-\begin{itemize}
-\item Project Introduction: Providing a unified view of the reporting platform for different data sources, where customers can create, update, export, and schedule data reports.
-\item Main Responsibilities: Responsible for CI/CD, refactoring and extending Analytics functionalities: support for exporting data in xlsx format, extension of SuperAnalytics, data formatting, etc. Also responsible for the construction and implementation of the monitoring platform, performance optimization.
-\item Tools and Key Technologies: Golang, Looker, Presto, Terraform, Salt, K8s, AWS, Gin, MySQL, Python, Airflow, Reactor, PQM
-\item Achievements: Enabled Analytics to export data in multiple formats (from CSV to XLSX) and implemented data formatting (date and number formatting based on different time zones) which secured a new major client in Europe for the company. By removing timezone restrictions, a new product, SupperAnalytics, was created, expanding Analytics capabilities from a single network to multi-network which notably enhanced the data analysis capabilities of SRE and Service teams. Introduced a new CI/CD process (transition from Terraform/Salt to Kubernetes), reducing the upgrade process for Analytics from 30 minutes to under 5 seconds. Implemented a new monitoring system (Doraemon) that shifted several ESC processing tasks from Engineers to Services, reducing response times from over 1 day to real-time. Conducted SQL performance optimization, resulting in an overall time-saving of 2 hours, a 20\% decrease in Presto cluster utilization, and daily cost savings of \$200. Abstracted the Golang backend structure, allowing for customized web backend services to be developed in as little as two person-days.
-\end{itemize}
+\subsection*{ClickHouse Data Analysis Platform (June 2020 -- May 2023)}
+\begin{enumerate}
+    \item \textbf{Project Overview:}
+    \begin{itemize}
+        \item Responsible for handling batch and real-time data from various applications in the ClickHouse Data Analysis Platform.
+        \item Provided real-time data query services for teams such as Forecast, Identity, and Insight.
+        \item ClickHouse cluster with 24 machines, 300TB batch data, daily increase of 2.5TB, 3 billion rows/batch, 8TB real-time data, and daily increase of 200GB.
+    \end{itemize}
+
+    \item \textbf{Key Responsibilities:}
+    \begin{itemize}
+        \item Managed all aspects of batch data import: scheduling, design, development, code review, deployment, etc.
+        \item Collaborated with multiple teams for integration of different data sources, development of performance testing platforms, and training.
+        \item Conducted research and sharing on ClickHouse functionality and SQL performance optimization (added indexes, projections, etc.).
+        \item Involved in CI/CD, monitoring systems, data validation systems, and various daily maintenance tasks.
+    \end{itemize}
+
+    \item \textbf{Tools and Key Technologies:}
+    \begin{itemize}
+        \item ClickHouse, ClickHouse-exporter, Airflow, Golang, K8s, Docker, Helm, Jenkins, EKS, S3, ORC.
+    \end{itemize}
+
+    \item \textbf{Achievements:}
+    \begin{itemize}
+      \item Abstracted the Golang backend architecture, enabling the customization of web backend services in just two person-days.
+      \item Provided distributed data import and refresh services for teams such as Forecast, Identity, and Insight. The system exhibits excellent scalability, reducing the integration cycle for new data sources from at least 5 working days to 2 working days. 
+      \item Utilized a distributed import tool for task partitioning, resource management, and concurrency control, resulting in a 50\% reduction in AWS EC2 costs. Additionally, enhanced data import stability by changing the retry granularity from batch-level to table-level.
+      \item Shared general principles and functionalities of ClickHouse, improving team members' understanding of ClickHouse features. Promoted the use of ClickHouse Explain, ClickHouse Projection, secondary indexes, and other features across multiple teams. Shared methods for ClickHouse SQL performance monitoring and optimization, transforming high-frequency and slow-running SQL queries from minutes to seconds (5m-10s). Optimized data product response capabilities and reduced ClickHouse workload.
+      \item Developed a performance testing platform for automating ClickHouse version upgrades or new data integrations. Reduced the time spent on routine tasks from 5 person-days to 2 person-days and provided visual performance comparisons and analysis.
+      \item Responsible for optimizing and developing CI/CD, data validation systems, and monitoring systems for DataLoaderManager. This included modifications to ClickHouse-explore source code, providing SQL performance monitoring metrics, and creating a dashboard for slow SQL queries.
+  \end{itemize}
+\end{enumerate}
+\subsection*{Analytics Data Product (November 2017 -- May 2020)}
+\begin{enumerate}
+    \item \textbf{Project Overview:}
+    \begin{itemize}
+        \item Provided data reporting services through Analytics and DataFeed products, supporting periodic report exports.
+        \item Developed real-time viewing products like Analytics, SuperAnalytics, DataFeed, CampaignInsight, MarketInsight, and related monitoring and data validation services.
+    \end{itemize}
+
+    \item \textbf{Key Responsibilities:}
+    \begin{itemize}
+        \item Participated in requirements review and interface definition for multiple modules of Analytics, DataFeed, SuperAnalytics, Doraemon, CampaignInsight, MarketInsight, etc.
+        \item Promoted the use of the Gin web backend framework, Golang testing framework, and Airflow within the team.
+        \item Contributed to the promotion and implementation of CI/CD deployment using Salt/Terraform and later EKS for multiple projects.
+        \item Optimized Analytics based on Domain table Looker data modeling and corresponding SQL performance.
+    \end{itemize}
+
+    \item \textbf{Tools and Key Technologies:}
+    \begin{itemize}
+        \item Golang, Looker, Presto, Terraform, Salt, K8s, AWS, Gin, MySQL, Python, Airflow, Reactor, PQM.
+    \end{itemize}
+
+    \item \textbf{Achievements:}
+    \begin{itemize}
+        \item Developed products including DataFeed, CampaignInsight, SuperAnalytics, Doraemon, addressing various data reporting needs.
+        \item Supplemented Analytics with DataFeed to address the lack of hourly granularity data.
+        \item Introduced new products (SuperAnalytics) by removing timezone limitations, expanding Analytics capabilities across the company.
+        \item Successfully stabilized Disney's customer base with CampaignInsight.
+        \item Developed a new monitoring system (Doraemon) and improved ESC processing capabilities.
+        \item Enhanced Analytics core functionality, introducing multi-format export (csv to xlsx) and data formatting.
+        \item Promoted the use of the Gin framework, improving Golang backend development speed.
+        \item Optimized SQL performance, saving time, reducing Presto cluster utilization, and saving daily costs.
+        \item Abstracted the Golang backend structure, allowing for the development of customized web backend services in as little as two person-days.
+    \end{itemize}
+\end{enumerate}
 
 \datedsubsection{\textbf{Beijing Qihoo Certeon Technology Co., Ltd.}, Beijing}{April 2015 -- November 2017}
 \role{Big Data Platform Development Engineer}{}
