@@ -50,7 +50,9 @@ ClickHouse数据分析平台 (2020年6月 -- 2023年5月)
   \item 工具和关键技术: ClickHouse、ClickHouse-exporter、Airflow、Golang、K8s、Docker、Helm、Jenkins、EKS、S3、ORC
   \item 成果：
     \begin{itemize}
-      \item 抽象出golang后端架构，可以在两人天定制web后端服务;为Forecast、Identity、Insight等多个团队提供分布式数据导入和刷新服务；系统具有良好扩展性，新的数据源的加入，只需要商量好数据源接口，将样例数据接入服务的周期从至少5个工作日降低为2个工作日；DataLoaderManager进行任务划分、资源管理、并发控制，降低了百分之50的AWS EC2费用，并且提高了数据导入的稳定性,将失败任务的重试粒度从batch级别变为表级别
+      \item 抽象出golang后端架构，可以在两人天定制web后端服务
+      \item 为Forecast、Identity、Insight等多个团队提供分布式数据导入和刷新服务；系统具有良好扩展性，新的数据源的加入，只需要商量好数据源接口，将样例数据接入服务的周期从至少5个工作日降低为2个工作日；
+      \item 分布式导入工具进行任务划分、资源管理、并发控制，降低了百分之50的AWS EC2费用，并且提高了数据导入的稳定性,将失败任务的重试粒度从batch级别变为表级别
       \item ClickHouse一般性原理和功能分享，提高组内成员对ClickHouse功能的理解，同时优化ClickHouse平台提供数据的能力；推广ClickHouse Explain、ClickHouse Projection、二级索引等多个feature在多个team中的使用；提供ClickHouse SQL性能监控和SQL优化方法分享，将多个数据产品中高频次、运行慢的SQL从分钟级别优化到秒级（5m-10s），优化数据产品的响应能力，降低ClickHouse的负载
       开发性能测试平台，用于自动化ClickHouse版本升级或者新数据接入时，SQL性能测试，将此例行工作从5人天降低到2人天，并提供可视化性能对比和分析
       \item 负责DataLoaderManager的CI/CD、数据校验系统以及监控系统（修改了ClickHouse-explore源码、提供SQL性能监控指标以及slow sql看板等）的优化和开发
@@ -62,7 +64,7 @@ Analytics 数据产品 (2017年11月 -- 2020年5月)
   \item 主要工作：
     \begin{itemize}
       \item Analytics、DataFeed、SuperAnalytics等项目多个模块的需求评审、接口定义；Doraemon、DataFeed、SuperAnalytics的从0到1构建和code review;Analytics、CampaignInsight、MarketInsight多个核心模块重构
-      \item 推广基于gin的web后端框架在小组内使用；推广Airflow在DataApp团队的使用
+      \item 推广基于gin的web后端框架在小组内使用；推广golang测试框架；推广Airflow在DataApp团队的使用
       \item 推广基于Salt/Terraform的CI/CD部署在DataApp团队的使用，又参与Doraemon、Analytics等多个项目基于EKS的部署
       \item 优化Analytics基于Domain表的Looker数据建模以及相应的SQL性能
     \end{itemize}
